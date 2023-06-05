@@ -4,7 +4,7 @@ import {
   LocationOnOutlined,
   WorkOutlineOutlined,
 } from "@mui/icons-material";
-import { Box, Typography, Divider, useTheme } from "@mui/material";
+import { Box, Typography, Divider, useTheme , useMediaQuery} from "@mui/material";
 import UserImage from "components/UserImage";
 import FlexBetween from "components/FlexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
@@ -20,6 +20,8 @@ const UserWidget = ({ userId, picturePath }) => {
   const dark = palette.neutral.dark;
   const medium = palette.neutral.medium;
   const main = palette.neutral.main;
+  const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
+
 
   const getUser = async () => {
     const response = await fetch(`http://localhost:3001/users/${userId}`, {
@@ -49,7 +51,17 @@ const UserWidget = ({ userId, picturePath }) => {
   } = user;
 
   return (
-    <WidgetWrapper>
+   
+    <WidgetWrapper  style={
+      isNonMobileScreens? {
+            position: "sticky",
+            top: 92,
+            zIndex: 10,
+            boxShadow: "0px 2px 4px rgba(0,0,0, 0.1)",
+          }
+        : {}
+    }>
+
       {/* FIRST ROW */}
       <FlexBetween
         gap="0.5rem"
@@ -149,3 +161,9 @@ const UserWidget = ({ userId, picturePath }) => {
 };
 
 export default UserWidget;
+
+
+
+
+
+

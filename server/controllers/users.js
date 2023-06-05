@@ -38,9 +38,11 @@ export const addRemoveFriend = async (req, res) => {
     const friend = await User.findById(friendId);
 
     if (user.friends.includes(friendId)) {
+      // Si l'ami est déjà dans la liste d'amis, le supprimer
       user.friends = user.friends.filter((id) => id !== friendId);
       friend.friends = friend.friends.filter((id) => id !== id);
     } else {
+      // Sinon, l'ajouter à la liste d'amis
       user.friends.push(friendId);
       friend.friends.push(id);
     }

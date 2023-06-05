@@ -9,29 +9,29 @@ const AdvertWidget = () => {
   const medium = palette.neutral.medium;
 
   return (
-    <WidgetWrapper>
+    <WidgetWrapper >
       <FlexBetween>
         <Typography color={dark} variant="h5" fontWeight="500">
-          Sponsored
+          Sponsorisé
         </Typography>
-        <Typography color={medium}>Create Ad</Typography>
+        <Typography color={medium}>ESGIS</Typography>
       </FlexBetween>
       <img
         width="100%"
         height="auto"
         alt="advert"
-        src="http://localhost:3001/assets/info4.jpeg"
+        src="http://localhost:3001/assets/esgis_togo_officiel_240815631_379913300251999_3699793581529207575_n.jpg"
         style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
       />
       <FlexBetween>
-        <Typography color={main}>MikaCosmetics</Typography>
-        <Typography color={medium}>mikacosmetics.com</Typography>
+        <Typography color={main}>ESGIS</Typography>
+        <Typography color={medium}>esgis.org</Typography>
       </FlexBetween>
       <Typography color={medium} m="0.5rem 0">
-        Your pathway to stunning and immaculate beauty and made sure your skin
-        is exfoliating skin and shining like light.
+       L'Ecole Supérieure de Gestion, d'Informatique et des Sciences (ESGIS), l'école des Leaders.
       </Typography>
     </WidgetWrapper>
+    
   );
 };
 
